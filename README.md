@@ -1,77 +1,86 @@
-# CustomerChurn-Cell2Cell
-Final Year Project — Customer Churn Prediction using the Cell2Cell Dataset
-- `/data/raw` — raw datasets (Cell2Cell train & holdout uploaded here)
-## 📊 Excel (Dashboard)  
-The Excel dashboard provides a quick overview of churn patterns through pivot tables and charts.  
+# 📊 Customer Churn Analysis – Cell2Cell Dataset
+### Final Year BCA Data Analytics Project
 
-- Visualized churn % across key groups: **Income Group, Marital Status, Homeownership, Average Revenue, Customer Care Calls**.  
-- Combined into one dashboard with positive (No Churn = green) and negative (Churn = red) color coding.  
+This project analyzes **customer churn** using the **Cell2Cell telecom dataset**, which contains over 50 features about customer demographics, billing behavior, handset details, and service usage.  
+The business objective is to identify which customers are most likely to leave (“churn”) and understand the factors that drive churn, so telecom companies can take proactive retention actions.  
 
-📂 File: [excel_dashboard.xlsx](./dashboard/excel_dashboard.xlsx)  
-
----
-
-## 🗄️ SQL (Queries & Indexing)  
-SQL scripts were used for exploration, cleaning, and summarization.  
-
-- Created cleaned view `v_cell2cell_clean` with proper datatypes.  
-- Added indexes on `Churn`, `IncomeGroup`, `MaritalStatus`, `Homeownership`, and `CustomerCareCalls`.  
-- Wrote queries for churn % by demographics, average revenue, and average care calls.  
-
-📂 Folder: [SQL/](./SQL/)  
-- Contains all `.sql` scripts.  
+We adopted a **multi-tool approach**:  
+- Excel → quick exploration and pivot dashboards  
+- SQL → structured queries and data cleaning  
+- Python → predictive modeling and machine learning  
+- Power BI → interactive and executive-style dashboard  
 
 ---
 
-## 🐍 Python (Notebooks & Modeling)  
-Python notebooks were used for data cleaning, analysis, and churn prediction modeling.  
+## 📑 Deliverables
 
-- **[01_eda.ipynb](./notebooks/01_eda.ipynb)** → Exploratory Data Analysis (churn distribution ≈29%, key features, missing values).  
-- **[02_cleaning.ipynb](./notebooks/02_cleaning.ipynb)** → Data preprocessing (imputation, grouping rare categories, preprocessing pipeline).  
-- **[03_modeling.ipynb](./notebooks/03_modeling.ipynb)** → Random Forest model:  
-  - Validation (threshold = 0.50): Accuracy ≈ 69%, Precision ≈ 44%, Recall ≈ 31%, ROC-AUC ≈ 0.66.  
-  - Evaluated F1-optimal (~0.38) and Top-20% (~0.50) thresholds.  
-  - Produced BI-ready scored datasets with churn probabilities and deciles.  
+### 🔹 Excel Dashboard
+**Goal:** Build an initial descriptive view of churn patterns using pivot tables and charts.  
+**What’s included:**  
+- Churn % by **Income Group**, **Marital Status**, and **Homeownership**  
+- Comparison of **Average Monthly Revenue** between churners and non-churners  
+- Comparison of **Average Customer Care Calls** between churners and non-churners  
+- Combined into a clean, single-page Excel dashboard  
 
-**Key Outputs:**  
-- Metrics: [validation_metrics.csv](./artifacts/validation_metrics.csv)  
-- Thresholds: [thresholds.json](./artifacts/thresholds.json)  
-- Scored datasets: [holdout_scored.csv](./data/clean/holdout_scored.csv), [validation_scored_with_deciles.csv](./data/clean/validation_scored_with_deciles.csv)  
-- Visuals: [ROC Curve](./report/roc_curve.png), [PR Curve](./report/pr_curve.png), [Confusion Matrix (default)](./report/confusion_matrix_default.png), [F1](./report/confusion_matrix_f1.png), [Top-20%](./report/confusion_matrix_top20.png)  
+📂 [Download Excel Dashboard](dashboard/cell2cell_dashboard.xlsx)
 
 ---
 
-## 📂 Data  
-The `data/` folder contains both the original input files and the cleaned outputs from Python.  
+### 🔹 SQL Analysis
+**Goal:** Practice structured querying and indexing to extract churn insights.  
+**What’s included:**  
+- SQL scripts for creating views, cleaning missing values, and handling data types  
+- Indexes built on important fields (`Churn`, `IncomeGroup`, `MaritalStatus`, `Homeownership`)  
+- Queries calculating churn % by demographic groups  
+- Queries summarizing **Average Revenue** and **Customer Care Calls** split by churn  
 
-- **[raw/](./data/raw/)** → Original Excel data provided for the project (not modified).  
-- **[clean/](./data/clean/)** → Final BI-ready outputs from Python modeling:  
-  - [holdout_scored.csv](./data/clean/holdout_scored.csv) → Holdout dataset with churn probabilities and decile rankings.  
-  - [validation_scored_with_deciles.csv](./data/clean/validation_scored_with_deciles.csv) → Validation set predictions with probabilities and deciles for evaluation.  
-
-👉 This separation makes it clear what was the original dataset vs what was generated after modeling.  
-
----
-
-## 📊 Report (Images & Visuals)  
-The `report/` folder contains all key visuals generated during analysis and modeling.  
-
-- [roc_curve.png](./report/roc_curve.png) → ROC curve showing model ranking performance.  
-- [pr_curve.png](./report/pr_curve.png) → Precision–Recall curve showing the trade-off between catching churners and accuracy.  
-- [confusion_matrix_default.png](./report/confusion_matrix_default.png) → Results at 0.50 threshold (default).  
-- [confusion_matrix_f1.png](./report/confusion_matrix_f1.png) → Results at F1-optimal threshold.  
-- [confusion_matrix_top20.png](./report/confusion_matrix_top20.png) → Results when targeting the top 20% riskiest customers.  
-
-👉 These visuals summarize the model’s performance and make the results easy to interpret without running the notebooks.  
+📂 [View SQL Scripts](SQL/)
 
 ---
 
-## ✅ Summary
-This project demonstrates an **end-to-end churn analysis pipeline**:  
-1. **Excel** for business dashboards.  
-2. **SQL** for structured queries and indexes.  
-3. **Python** for machine learning modeling.  
-4. **Data outputs** for BI tools.  
-5. **Report visuals** for easy interpretation.  
+### 🔹 Python Modeling
+**Goal:** Build an end-to-end predictive modeling pipeline.  
+**What’s included:**  
+- **Exploratory Data Analysis (EDA):** distributions, missing values, correlations  
+- **Data Preprocessing:** handling unknowns, encoding categorical variables, scaling numerics  
+- **Model Training:** Logistic Regression & Random Forest, with cross-validation  
+- **Evaluation Metrics:** Accuracy, Precision, Recall, F1-score, ROC-AUC  
+- **Risk Scoring:** Generating churn probabilities and customer decile segmentation  
+- **Outputs:** confusion matrices, ROC/PR curves, validation metrics CSV, churn-scored holdout dataset  
 
+📂 [Notebooks](notebooks/) | [Artifacts & Outputs](data/clean/)
 
+---
+
+### 🔹 Power BI Dashboard
+**Goal:** Deliver a polished, interactive dashboard for decision-makers.  
+**What’s included:**  
+- **Churn % by Income Group** (gradient-colored, sorted by churn risk)  
+- **Churn % by Marital Status** (yes/no/unknown comparison)  
+- **Churn % by Homeownership** (donut view of known vs unknown)  
+- **Average Monthly Revenue by Churn** (solid red/green for loss vs retention)  
+- **Average Customer Care Calls by Churn** (solid red/green)  
+- Slicer for Churn → allows interactive filtering  
+- Exported in both `.pbix` (editable) and `.pdf` (shareable report)  
+
+📂 [Download Power BI File (.pbix)](dashboard/cell2cell_powerbi.pbix)  
+📂 [View Dashboard (PDF)](report/cell2cell_powerbi_dashboard.pdf)
+
+---
+
+## 📌 Key Insights
+- Churn is concentrated in certain **income groups** and **marital statuses**.  
+- **Churned customers generate less monthly revenue** but **contact support more often**.  
+- Machine learning model highlights churners can be segmented into **risk deciles**, enabling targeted retention campaigns.  
+
+---
+
+## 🛠️ Tools & Technologies
+- **Excel** (Pivot Tables, Dashboarding)  
+- **SQL (SQLite, DB Browser)** for querying & indexing  
+- **Python**: Pandas, NumPy, Scikit-Learn, Matplotlib, Seaborn, Joblib  
+- **Power BI** for interactive visual analytics  
+
+---
+
+📌 *This repository demonstrates a complete analytics pipeline: raw data → descriptive insights → predictive modeling → interactive reporting.*
