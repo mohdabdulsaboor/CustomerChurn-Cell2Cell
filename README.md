@@ -15,72 +15,61 @@ Adopted a **multi-tool approach**:
 ## 📑 Deliverables
 
 ### 🔹 Excel Dashboard
-**Goal:** Build an initial descriptive view of churn patterns using pivot tables and charts.  
-**What’s included:**  
-- Churn % by **Income Group**, **Marital Status**, and **Homeownership**  
-- Comparison of **Average Monthly Revenue** between churners and non-churners  
-- Comparison of **Average Customer Care Calls** between churners and non-churners  
-- Combined into a clean, single-page Excel dashboard  
+- Pivot-based dashboard analyzing churn by Income Group, Marital Status, and Homeownership.  
+- Includes Average Monthly Revenue and Average Customer Care Calls by churn.  
+- All Excel dashboards are stored in the **`dashboard/` folder**.  
 
-📂 [Download Excel Dashboard](dashboard/cell2cell_dashboard.xlsx)
+📂 Go to: [dashboard/](./dashboard/)
 
 ---
 
 ### 🔹 SQL Analysis
-**Goal:** Practice structured querying and indexing to extract churn insights.  
-**What’s included:**  
-- SQL scripts for creating views, cleaning missing values, and handling data types  
-- Indexes built on important fields (`Churn`, `IncomeGroup`, `MaritalStatus`, `Homeownership`)  
-- Queries calculating churn % by demographic groups  
-- Queries summarizing **Average Revenue** and **Customer Care Calls** split by churn  
+- SQL scripts for creating cleaned views, handling missing values, and building indexes.  
+- Queries for churn % by demographics and averages for revenue/care calls.  
+- All `.sql` scripts are stored in the **`SQL/` folder**.  
 
-📂 [View SQL Scripts](SQL/)
+📂 Go to: [SQL/](./SQL/)
 
 ---
 
 ### 🔹 Python Modeling
-**Goal:** Build an end-to-end predictive modeling pipeline.  
-**What’s included:**  
-- **Exploratory Data Analysis (EDA):** distributions, missing values, correlations  
-- **Data Preprocessing:** handling unknowns, encoding categorical variables, scaling numerics  
-- **Model Training:** Logistic Regression & Random Forest, with cross-validation  
-- **Evaluation Metrics:** Accuracy, Precision, Recall, F1-score, ROC-AUC  
-- **Risk Scoring:** Generating churn probabilities and customer decile segmentation  
-- **Outputs:** confusion matrices, ROC/PR curves, validation metrics CSV, churn-scored holdout dataset  
+- Jupyter notebooks covering:  
+  - Exploratory Data Analysis (EDA)  
+  - Data Cleaning & Preprocessing  
+  - Model Training & Evaluation (LogReg, RandomForest)  
+  - Risk Scoring (churn probabilities + deciles)  
+- Outputs (clean CSVs, metrics) saved in **`data/clean/`** and **`report/`**.  
+- Notebooks are stored in the **`notebooks/` folder**.  
 
-📂 [Notebooks](notebooks/) | [Artifacts & Outputs](data/clean/)
+📂 Go to: [notebooks/](./notebooks/) | [data/clean/](./data/clean/)
 
 ---
 
 ### 🔹 Power BI Dashboard
-**Goal:** Deliver a polished, interactive dashboard for decision-makers.  
-**What’s included:**  
-- **Churn % by Income Group** (gradient-colored, sorted by churn risk)  
-- **Churn % by Marital Status** (yes/no/unknown comparison)  
-- **Churn % by Homeownership** (donut view of known vs unknown)  
-- **Average Monthly Revenue by Churn** (solid red/green for loss vs retention)  
-- **Average Customer Care Calls by Churn** (solid red/green)  
-- Slicer for Churn → allows interactive filtering  
-- Exported in both `.pbix` (editable) and `.pdf` (shareable report)  
+- Interactive dashboard with:  
+  - Churn % by Income Group, Marital Status, and Homeownership  
+  - Average Monthly Revenue vs. Churn  
+  - Average Customer Care Calls vs. Churn  
+- Includes a slicer for churn status and consistent red/green risk colors.  
+- Power BI files (`.pbix`, `.pdf`) are stored in the **`dashboard/`** and **`report/`** folders.  
 
-📂 [Download Power BI File (.pbix)](dashboard/cell2cell_powerbi.pbix)  
-📂 [View Dashboard (PDF)](report/cell2cell_powerbi_dashboard.pdf)
+📂 Go to: [dashboard/](./dashboard/) | [report/](./report/)
 
 ---
 
 ## 📌 Key Insights
-- Churn is concentrated in certain **income groups** and **marital statuses**.  
-- **Churned customers generate less monthly revenue** but **contact support more often**.  
-- Machine learning model highlights churners can be segmented into **risk deciles**, enabling targeted retention campaigns.  
+- Churn is higher in certain **income groups** and **marital statuses**.  
+- **Churned customers** bring in less revenue but contact support more often.  
+- Model separates customers into **risk deciles**, enabling targeted retention.  
 
 ---
 
-## 🛠️ Tools & Technologies
-- **Excel** (Pivot Tables, Dashboarding)  
-- **SQL (SQLite, DB Browser)** for querying & indexing  
-- **Python**: Pandas, NumPy, Scikit-Learn, Matplotlib, Seaborn, Joblib  
-- **Power BI** for interactive visual analytics  
+## 🛠️ Tools & Stack
+- **Excel** – Pivot Tables & Dashboarding  
+- **SQL (SQLite)** – Data cleaning, indexing, querying  
+- **Python** – Pandas, Scikit-learn, Matplotlib, Seaborn  
+- **Power BI** – Interactive reporting & executive dashboard  
 
 ---
 
-📌 *This repository demonstrates a complete analytics pipeline: raw data → descriptive insights → predictive modeling → interactive reporting.*
+📌 *This repo shows a complete data analytics pipeline: raw data → descriptive insights → predictive modeling → interactive reporting.*
