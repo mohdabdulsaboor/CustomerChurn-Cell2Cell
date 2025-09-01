@@ -4,7 +4,7 @@
 This project analyzes **customer churn** using the **Cell2Cell telecom dataset**, which contains over 50 features about customer demographics, billing behavior, handset details, and service usage.  
 The business objective is to identify which customers are most likely to leave (“churn”) and understand the factors that drive churn, so telecom companies can take proactive retention actions.  
 
-We adopted a **multi-tool approach**:  
+Adopted a **multi-tool approach**:  
 - Excel → quick exploration and pivot dashboards  
 - SQL → structured queries and data cleaning  
 - Python → predictive modeling and machine learning  
