@@ -41,7 +41,7 @@ Adopted a **multi-tool approach**:
 - Outputs (clean CSVs, metrics) saved in **`data/clean/`** and **`report/`**.  
 - Notebooks are stored in the **`notebooks/` folder**.  
 
-📂 Go to: [notebooks/](./notebooks/) | [data/clean/](./data/clean/)
+📂 Go to: [notebooks/](./notebooks/) | [data/clean/](./data/cleaned/)
 
 ---
 
