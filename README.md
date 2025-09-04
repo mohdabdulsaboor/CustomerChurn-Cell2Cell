@@ -28,7 +28,7 @@ Adopted a **multi-tool approach**:
 - Queries for churn % by demographics and averages for revenue/care calls.  
 - All `.sql` scripts are stored in the **`SQL/` folder**.  
 
-📂 Go to: [SQL/](./SQL/)
+📂 Go to: [SQL/](./sql/)
 
 ---
 
