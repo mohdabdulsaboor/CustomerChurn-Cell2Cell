@@ -19,7 +19,7 @@ Adopted a **multi-tool approach**:
 - Includes Average Monthly Revenue and Average Customer Care Calls by churn.  
 - All Excel dashboards are stored in the **`dashboard/` folder**.  
 
-📂 Go to: [dashboard/](./dashboard/)
+📂 Go to: [dashboard/](./dashboards/)
 
 ---
 
