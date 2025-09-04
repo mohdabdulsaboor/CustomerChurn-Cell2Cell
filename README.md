@@ -53,7 +53,7 @@ Adopted a **multi-tool approach**:
 - Includes a slicer for churn status and consistent red/green risk colors.  
 - Power BI files (`.pbix`, `.pdf`) are stored in the **`dashboard/`** and **`report/`** folders.  
 
-📂 Go to: [dashboard/](./dashboard/) | [report/](./report/)
+📂 Go to: [dashboard/](./dashboards/) | [report/](./report/)
 
 ---
 
